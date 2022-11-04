@@ -89,7 +89,12 @@ export class RolesGuard {
 
 Like pipes and exception filters, guards can be **controller-scoped**, method-scoped, or global-scoped. Below, we set up a controller-scoped guard using the `@UseGuards()` decorator. This decorator may take a single argument, or a comma-separated list of arguments. This lets you easily apply the appropriate set of guards with one declaration.
 
-```typescript
+```
+
+
+
+
+script
 @@filename()
 @Controller('cats')
 @UseGuards(RolesGuard)
@@ -98,7 +103,7 @@ export class CatsController {}
 
 > info **Hint** The `@UseGuards()` decorator is imported from the `@nestjs/common` package.
 
-Above, we passed the `RolesGuard` type (instead of an instance), leaving responsibility for instantiation to the framework and enabling dependency injection. As with pipes and exception filters, we can also pass an in-place instance:
+Above, we passed the `RolesGuard` class (instead of an instance), leaving responsibility for instantiation to the framework and enabling dependency injection. As with pipes and exception filters, we can also pass an in-place instance:
 
 ```typescript
 @@filename()
